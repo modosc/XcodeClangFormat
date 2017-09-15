@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5143C9DD1F6C4DE90020652B /* futimens.c in Sources */ = {isa = PBXBuildFile; fileRef = 5143C9DC1F6C4DE90020652B /* futimens.c */; };
 		559B23E31D7EBDA300937AB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 559B23E21D7EBDA300937AB3 /* AppDelegate.m */; };
 		559B23E61D7EBDA300937AB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 559B23E51D7EBDA300937AB3 /* main.m */; };
 		559B23E81D7EBDA300937AB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 559B23E71D7EBDA300937AB3 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5143C9DC1F6C4DE90020652B /* futimens.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = futimens.c; path = ../futimens.c; sourceTree = "<group>"; };
 		556DCDEF1D7EF694005956C8 /* XcodeClangFormat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XcodeClangFormat.entitlements; sourceTree = "<group>"; };
 		557D38B71D7F270E00708269 /* libcurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurses.tbd; path = usr/lib/libcurses.tbd; sourceTree = SDKROOT; };
 		559B23DE1D7EBDA300937AB3 /* XcodeClangFormat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XcodeClangFormat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 				559B24151D7EBDC400937AB3 /* ClangFormatExtension.m */,
 				559B24171D7EBDC400937AB3 /* ClangFormatCommand.h */,
 				559B24181D7EBDC400937AB3 /* ClangFormatCommand.mm */,
+				5143C9DC1F6C4DE90020652B /* futimens.c */,
 				559B241A1D7EBDC400937AB3 /* Info.plist */,
 				559B24121D7EBDC400937AB3 /* Supporting Files */,
 			);
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5143C9DD1F6C4DE90020652B /* futimens.c in Sources */,
 				559B24161D7EBDC400937AB3 /* ClangFormatExtension.m in Sources */,
 				559B24191D7EBDC400937AB3 /* ClangFormatCommand.mm in Sources */,
 			);
@@ -454,6 +458,8 @@
 					"$(LLVM_LIBDIR)/libclangBasic.a",
 					"$(LLVM_LIBDIR)/libclangRewrite.a",
 					"$(LLVM_LIBDIR)/libLLVMCore.a",
+					"$(LLVM_LIBDIR)/libLLVMBinaryFormat.a",
+					"$(LLVM_LIBDIR)/libLLVMDemangle.a",
 					"$(LLVM_LIBDIR)/libLLVMSupport.a",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mapbox.XcodeClangFormat.clang-format";
@@ -491,6 +497,8 @@
 					"$(LLVM_LIBDIR)/libclangBasic.a",
 					"$(LLVM_LIBDIR)/libclangRewrite.a",
 					"$(LLVM_LIBDIR)/libLLVMCore.a",
+					"$(LLVM_LIBDIR)/libLLVMBinaryFormat.a",
+					"$(LLVM_LIBDIR)/libLLVMDemangle.a",
 					"$(LLVM_LIBDIR)/libLLVMSupport.a",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mapbox.XcodeClangFormat.clang-format";

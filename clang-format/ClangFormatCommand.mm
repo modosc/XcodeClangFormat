@@ -72,7 +72,7 @@ std::vector<clang::tooling::Range> computeOffsets(NSMutableArray<NSString*>* lin
     auto output = std::vector<clang::tooling::Range>();
     output.reserve([lines count]);
     for (NSString* line in lines) {
-        output.emplace_back(offset, offset + line.length);
+        output.emplace_back(offset, line.length);
         offset += line.length;
     }
 
@@ -157,7 +157,9 @@ NSUserDefaults* defaults = nil;
 
     if (format.SortIncludes) {
         auto includeSort = clang::format::sortIncludes(format, code, ranges, "tmp");
-        replaces.insert(includeSort.cbegin(), includeSort.cend());
+        for (auto& repl : includeSort) {
+            replaces.add(repl);
+        }
     }
     if (replaces.empty()) {
         completionHandler([NSError
@@ -172,11 +174,10 @@ NSUserDefaults* defaults = nil;
     auto result = clang::tooling::applyAllReplacements(code, replaces);
     if (!result) {
         // We could not apply the calculated replacements.
-        completionHandler([NSError errorWithDomain:errorDomain
-                                              code:0
-                                          userInfo:@{
-                                              NSLocalizedDescriptionKey : @"Failed to apply formatting replacements."
-                                          }]);
+        completionHandler([NSError
+            errorWithDomain:errorDomain
+                       code:0
+                   userInfo:@{NSLocalizedDescriptionKey : @"Failed to apply formatting replacements."}]);
         return;
     }
 
@@ -195,8 +196,8 @@ NSUserDefaults* defaults = nil;
         auto start = offsets[range.start.line].getOffset() + (int) range.start.column;
         auto end = offsets[range.end.line].getOffset() + (int) range.end.column;
 
-        start = clang::tooling::shiftedCodePosition(replaces, start);
-        end = clang::tooling::shiftedCodePosition(replaces, end);
+        start = replaces.getShiftedCodePosition(start);
+        end = replaces.getShiftedCodePosition(end);
 
         const auto start_line = lineFromOffset(offsetsNew, start);
         const auto start_column = columnFromOffset(offsetsNew, start);
