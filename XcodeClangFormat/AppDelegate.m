@@ -25,6 +25,7 @@ NSUserDefaults* defaults = nil;
         style = @"llvm";
     }
 
+    // clang-format of
     if ([style isEqualToString:@"custom"]) {
         self.customStyle.state = NSOnState;
     } else if ([style isEqualToString:@"google"]) {
@@ -38,6 +39,7 @@ NSUserDefaults* defaults = nil;
     } else {
         self.llvmStyle.state = NSOnState;
     }
+    // clang-format on
 
     NSData* bookmark = [defaults dataForKey:@"file"];
     if (bookmark) {

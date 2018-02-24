@@ -1,6 +1,6 @@
 # XcodeClangFormat
 
-### [⚙ Download Latest Release](https://github.com/mapbox/XcodeClangFormat/releases/latest)
+### [⚙ Download Latest Release](https://github.com/jiyee/XcodeClangFormat/releases/latest)
 
 This plugin written for Xcode 8's new plugin infrastructure uses Clang's `libclangFormat` library to format code according to a `.clang-format` file.
 
