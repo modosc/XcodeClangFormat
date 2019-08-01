@@ -236,6 +236,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -493,6 +494,7 @@
 				OTHER_LDFLAGS = (
 					"$(LLVM_LIBDIR)/libclangFormat.a",
 					"$(LLVM_LIBDIR)/libclangToolingCore.a",
+					"$(LLVM_LIBDIR)/libclangToolingInclusions.a",
 					"$(LLVM_LIBDIR)/libclangLex.a",
 					"$(LLVM_LIBDIR)/libclangBasic.a",
 					"$(LLVM_LIBDIR)/libclangRewrite.a",

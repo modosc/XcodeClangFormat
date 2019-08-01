@@ -4,10 +4,10 @@ set -e
 set -o pipefail
 set -u
 
-# http://releases.llvm.org/5.0.0/clang+llvm-5.0.0-x86_64-apple-darwin.tar.xz
+# http://releases.llvm.org/8.0.0/clang+llvm-8.0.0-x86_64-apple-darwin.tar.xz
 
-LLVM_VERSION=5.0.0
-LLVM_HASH=633f15fe09e6d9f0651add6c4a65e6f68da9809180c196c29573d96ec64a5c1f
+LLVM_VERSION=8.0.0
+LLVM_HASH=b3f916a6e407e00b460cdd9cd878bd46dbcf51721c0814f72e220451d7dc2181
 LLVM_CONFIG=${LLVM_CONFIG:-llvm-config}
 
 command -v "${LLVM_CONFIG}" >/dev/null 2>&1 || {
