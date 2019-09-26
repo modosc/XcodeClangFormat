@@ -144,7 +144,17 @@ NSUserDefaults* defaults = nil;
                    }]);
         return;
     }
-
+  
+    // BE: Use Xcode Settings
+    format.TabWidth = (unsigned) invocation.buffer.tabWidth;
+    format.IndentWidth = (unsigned) invocation.buffer.indentationWidth;
+    if (invocation.buffer.usesTabsForIndentation){
+      format.UseTab = clang::format::FormatStyle::UT_ForIndentation;
+    }
+    // BE: Do not break strings
+    format.BreakStringLiterals = false;
+    format.ColumnLimit = 0;// No column limit
+  
     // Retrieve buffer and its offsets
     auto code = llvm::StringRef([invocation.buffer.completeBuffer UTF8String]);
     auto offsets = computeOffsets(invocation.buffer.lines);
@@ -220,3 +230,4 @@ NSUserDefaults* defaults = nil;
     return;
 }
 @end
+
