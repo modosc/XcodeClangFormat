@@ -1,3 +1,4 @@
 xcuserdata
 /config.xcconfig
 /deps
+.DS_Store
