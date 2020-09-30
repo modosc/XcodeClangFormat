@@ -1,6 +1,6 @@
 # XcodeClangFormat
 
-Note: This is a fork that tries to collect all the useful changes from the various other forks out there
+## Note: This is a fork that tries to collect all the useful changes from the various other forks out there
 
 This plugin written for Xcode 8's new plugin infrastructure uses Clang's `libclangFormat` library to format code according to a `.clang-format` file.
 
