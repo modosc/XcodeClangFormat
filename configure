@@ -4,10 +4,9 @@ set -e
 set -o pipefail
 set -u
 
-# https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang+llvm-10.0.0-x86_64-apple-darwin.tar.xz
-
-LLVM_VERSION=10.0.0
-LLVM_HASH=70a7d5ed3bb16a5b5310ea4bfe95a74894022a43abb96d28ef8e30ab1f41d47a
+# https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.0/clang+llvm-11.0.0-x86_64-apple-darwin.tar.xz
+LLVM_VERSION=11.0.0
+LLVM_HASH=827debc34e797b65f60fb27de4078ba9a4c23c321f3d3b42f7c6be31a6d94dcd
 LLVM_CONFIG=${LLVM_CONFIG:-llvm-config}
 
 command -v "${LLVM_CONFIG}" >/dev/null 2>&1 || {
