@@ -18,7 +18,7 @@
 		559B241D1D7EBDC400937AB3 /* clang-format.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 559B240F1D7EBDC400937AB3 /* clang-format.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		55BCFFFA1D80170F000EDB05 /* libcurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 557D38B71D7F270E00708269 /* libcurses.tbd */; };
 		FC3294C124A2B75C00E3CD2A /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3294C024A2B75C00E3CD2A /* XcodeKit.framework */; };
-		FC3294C224A2B75C00E3CD2A /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC3294C024A2B75C00E3CD2A /* XcodeKit.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC3294C224A2B75C00E3CD2A /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC3294C024A2B75C00E3CD2A /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,7 +222,7 @@
 		559B23D61D7EBDA300937AB3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = Mapbox;
 				TargetAttributes = {
 					559B23DD1D7EBDA300937AB3 = {
@@ -355,6 +355,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -412,6 +413,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -433,6 +435,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
